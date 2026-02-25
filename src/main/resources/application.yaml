@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: querydsl
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/querydsl
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        # show_sql은 콘솔에 직접 찍으므로 로그 백업이 안 됨.
+        # 로깅 레벨 설정을 사용하신다면 아래 format_sql만 켜두는 게 깔끔합니다.
+        format_sql: true
+        highlight_sql: true # (선택) 인텔리제이 콘솔에서 SQL에 색상을 입혀줍니다.
+
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 2000
+logging.level:
+  org.hibernate.SQL: debug
+  # Hibernate 6 버전부터는 아래 경로를 사용해야 파라미터 값이 보입니다.
+  org.hibernate.orm.jdbc.bind: trace
