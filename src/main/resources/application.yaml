@@ -17,6 +17,7 @@ spring:
         # 로깅 레벨 설정을 사용하신다면 아래 format_sql만 켜두는 게 깔끔합니다.
         format_sql: true
         highlight_sql: true # (선택) 인텔리제이 콘솔에서 SQL에 색상을 입혀줍니다.
+        use_sql_comments: true
 
   data:
     web:
